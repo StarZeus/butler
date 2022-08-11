@@ -174,7 +174,13 @@ async function build(opts = {}) {
             },
             servers: [
                 {
-                    url: `http://${globals.config.get('Butler.restServerConfig.serverHost')}:${globals.config.get(
+                    url: /
+                },
+                {
+                    url: `${globals.config.get('Butler.restServerConfig.serverScheme')}://${globals.config.get('Butler.restServerConfig.serverHost')}`,
+                },
+                {
+                    url: `${globals.config.get('Butler.restServerConfig.serverScheme')}://${globals.config.get('Butler.restServerConfig.serverHost')}:${globals.config.get(
                         'Butler.restServerConfig.serverPort'
                     )}`,
                 },
